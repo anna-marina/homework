@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+	int n, w;
+	scanf("%d %d", &n, &w);
+	int t = sizeof(int) * 8 + 1 + ~w; // -w
+	int res = ! (((w << t) >>t) ^ w); // сдвинули, обратно и проверили
+	printf("%d", res);
+	return 0;
+}
